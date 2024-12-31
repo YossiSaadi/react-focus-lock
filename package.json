@@ -10,6 +10,13 @@
     "**/sidecar.js",
     "**/index.js"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/es2015/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  },
   "scripts": {
     "build:dts": "copyfiles -u 1 src/**/*.d.ts dist/cjs",
     "build:cjs": "NODE_ENV=cjs babel src -d dist/cjs",
